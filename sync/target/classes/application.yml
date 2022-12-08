@@ -1,0 +1,31 @@
+server:
+  port: 8088
+
+ssbe:
+  cassandra:
+    host: "127.0.0.1"
+    port: 9042
+  es:
+    seeds: "127.0.0.1"
+    port: 9300
+    bulkSize: 500
+    transport:
+      sniff: true
+  kafka:
+    bootstrap-server: "127.0.0.1:9092"
+    topic: search_sync
+
+spring:
+  application:
+    name: "search-sync-server"
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
