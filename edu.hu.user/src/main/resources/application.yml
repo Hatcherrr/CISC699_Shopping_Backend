@@ -1,0 +1,15 @@
+server:
+  port: 8096
+
+spring:
+  application:
+    name: shopping-user-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
